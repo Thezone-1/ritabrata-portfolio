@@ -1,8 +1,15 @@
-# ritabrataganguly.com
+# rbganguly.in
 
 Personal site for Ritabrata Ganguly, performance and reliability engineer.
 
-Static single page. No build step.
+Static HTML. No build step, no dependencies.
+
+## Files
+
+- `index.html` is the whole home page, styles and script inline.
+- `blog/index.html` is the /blog route.
+- `Main.dc.html` is the design source the page was generated from.
+- `portrait.webp` is used on the page, `portrait.jpg` is only for social previews.
 
 ## Local
 
@@ -10,17 +17,24 @@ Static single page. No build step.
 python -m http.server 8000
 ```
 
-Then open http://localhost:8000
-
 ## Deploy
 
-Vercel or Netlify, no framework preset. Point the custom domain at it once DNS is ready.
+```
+npx vercel deploy --prod
+```
 
-## Editing
+## DNS
 
-`index.html` is the whole site. `Main.dc.html` is the design source it was generated from.
+rbganguly.in and www.rbganguly.in are attached to the Vercel project. At the registrar set:
 
-Open items:
+```
+A     rbganguly.in       76.76.21.21
+CNAME www                cname.vercel-dns.com
+```
 
-- Portrait image is a placeholder slot in the hero.
-- The Real role has a bracketed placeholder that needs two or three real lines.
+Or point the nameservers at ns1.vercel-dns.com and ns2.vercel-dns.com.
+
+## Open items
+
+- `resume.pdf` is referenced by the Connect card but does not exist yet.
+- Two `[RITABRATA: ...]` placeholders, one in the QA Engineer card and one on /blog.
