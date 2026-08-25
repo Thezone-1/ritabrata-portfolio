@@ -195,9 +195,21 @@
     .about .body{max-width:40ch;}
     [data-theme="dark"] .hero h1,
     [data-theme="dark"] h1{color:#E5C67F;}
+
+    #splash{position:fixed;inset:0;z-index:999;background:var(--bg);
+      display:flex;align-items:center;justify-content:center;transition:opacity .55s ease;}
+    #splash.done{opacity:0;pointer-events:none;}
+    #greet{font-family:'Young Serif',Georgia,serif;font-size:66px;line-height:1.15;
+      color:var(--ink);text-align:center;padding:0 24px;animation:gpop .24s ease-out both;}
+    [data-theme="dark"] #greet{color:#E5C67F;}
+    @keyframes gpop{from{opacity:0;transform:translateY(9px);}to{opacity:1;transform:none;}}
+    @media (max-width:720px){#greet{font-size:40px;}}
+    @media (prefers-reduced-motion:reduce){#splash{display:none;}}
   </style>
 </head>
 <body>
+<div id="splash"><span id="greet">Hello</span></div>
+<noscript><style>#splash{display:none;}</style></noscript>
 <button class="themetog" id="themetog" type="button" aria-label="Toggle dark mode">
   <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"></path></svg>
   <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"></path></svg>
@@ -437,7 +449,7 @@
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+function start() {
   var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var name = document.getElementById('name');
@@ -481,7 +493,41 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
 
   Array.prototype.forEach.call(cards, function (el) { io.observe(el); });
-});
+}
+
+(function () {
+  var splash = document.getElementById('splash');
+  var greet = document.getElementById('greet');
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var seen = false;
+  try { seen = sessionStorage.getItem('greeted') === '1'; } catch (e) {}
+
+  if (!splash) { start(); return; }
+  if (still || seen) { splash.parentNode.removeChild(splash); start(); return; }
+
+  var words = ['Hello', '\u0928\u092E\u0938\u094D\u0924\u0947', '\u09A8\u09AE\u09B8\u09CD\u0995\u09BE\u09B0',
+               'Hola', '\u4F60\u597D', '\u3053\u3093\u306B\u3061\u306F', 'Bonjour',
+               'Ol\u00E1', '\u0645\u0631\u062D\u0628\u0627', 'Ciao'];
+  var i = 0;
+
+  var timer = setInterval(function () {
+    i++;
+    if (i >= words.length) {
+      clearInterval(timer);
+      splash.classList.add('done');
+      try { sessionStorage.setItem('greeted', '1'); } catch (e) {}
+      setTimeout(function () {
+        if (splash.parentNode) splash.parentNode.removeChild(splash);
+      }, 600);
+      start();
+      return;
+    }
+    greet.textContent = words[i];
+    greet.style.animation = 'none';
+    void greet.offsetWidth;
+    greet.style.animation = '';
+  }, 175);
+})();
 </script>
 
 <script>
