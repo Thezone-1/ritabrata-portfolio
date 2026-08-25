@@ -15,7 +15,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Mrs+Saint+Delafield&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Mrs+Saint+Delafield&display=swap">
   <style>
     :root{
       color-scheme:light;
@@ -60,7 +60,7 @@
     }
     a{color:var(--accent);text-decoration:none;}
     a:hover{color:var(--accent-2);}
-    .serif{font-family:'Newsreader',Georgia,'Times New Roman',serif;font-weight:500;}
+    .serif{font-family:'Young Serif',Georgia,'Times New Roman',serif;font-weight:400;}
     .mono{font-family:'IBM Plex Mono',ui-monospace,monospace;}
     .shell{max-width:1240px;margin:0 auto;padding:0 28px;}
 
@@ -81,7 +81,7 @@
     .card.accent .body{color:#D5DFFB;}
 
     .hero{padding:104px 0 44px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;}
-    .hero h1{font-size:88px;line-height:1.02;letter-spacing:-.022em;margin:0;color:var(--ink);font-weight:600;}
+    .hero h1{font-size:78px;line-height:1.06;letter-spacing:-.016em;margin:0;color:var(--ink);font-weight:400;}
     .hero p{font-size:19px;line-height:1.45;color:var(--muted);margin:0;max-width:32ch;}
 
     .bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px;padding-bottom:28px;}
@@ -97,14 +97,14 @@
     .figs>.fig:first-child{padding-left:0;}
     .figs>.fig+.fig{border-left:1px solid var(--line);}
     .fig{display:flex;flex-direction:column;gap:4px;}
-    .fig b{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:56px;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums;}
+    .fig b{font-family:'Young Serif',Georgia,serif;font-weight:400;font-size:56px;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums;}
     .fig span{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);line-height:1.5;}
 
     .rows{display:flex;flex-direction:column;}
     .row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(234,240,251,.14);color:var(--deep-ink);}
     .row:last-child{border-bottom:0;}
     .row:hover{color:#FFFFFF;}
-    .row .lbl{font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:20px;}
+    .row .lbl{font-family:'Young Serif',Georgia,serif;font-weight:400;font-size:19px;}
     .row svg{opacity:.55;transition:opacity .35s ease,transform .35s ease;}
     .row:hover svg{opacity:1;transform:translate(3px,-3px);}
 
@@ -121,8 +121,8 @@
     .tool span{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:.05em;
       text-transform:uppercase;color:var(--muted);text-align:center;line-height:1.3;}
 
-    .h3{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:26px;line-height:1.15;margin:0;letter-spacing:-.008em;}
-    .h4{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:20px;line-height:1.2;margin:0;}
+    .h3{font-family:'Young Serif',Georgia,serif;font-weight:400;font-size:25px;line-height:1.2;margin:0;letter-spacing:-.004em;}
+    .h4{font-family:'Young Serif',Georgia,serif;font-weight:400;font-size:19px;line-height:1.28;margin:0;}
     .badge{width:38px;height:38px;}
     .todo{border:1px dashed var(--todo-line);border-radius:12px;padding:15px 17px;background:var(--todo-bg);}
 
@@ -140,7 +140,7 @@
     @media (max-width:980px){
       .hero{padding:74px 0 30px;}
       .sig{font-size:42px;}
-      .hero h1{font-size:46px;}
+      .hero h1{font-size:42px;}
       .hero p{font-size:18px;}
       .c3,.c4,.c5,.c7,.c8{grid-column:span 12;}
       .figs{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 0;}
@@ -226,7 +226,7 @@
       <div class="eyebrow">About</div>
       <h2 class="h3">Calm under load.</h2>
       <p class="body">I work on the gap between what a system claims and what it actually does. Two and a half years at PwC across banking, FMCG and education taught me that the bottleneck is rarely where anyone expects, and that a finding only counts once the budget holder can repeat it back. I came to engineering from chemical engineering, and to leadership early. I measure before I argue, and I judge the work by what still runs after I have gone.</p>
-      <p class="serif" style="font-style:italic;font-size:19px;line-height:1.35;color:var(--ink);margin:4px 0 0;">Let's build systems that don't just work, they fly.</p>
+      <p class="serif" style="font-size:19px;line-height:1.45;color:var(--ink);margin:6px 0 0;">Let's build systems that don't just work, they fly.</p>
       <div class="sig" aria-hidden="true">Ritab</div>
     </div>
 
@@ -424,7 +424,7 @@
 
     <div class="card c12 reveal">
       <div class="foot">
-        <div class="serif" style="font-size:25px;font-style:italic;">Thanks for scrolling this far.</div>
+        <div class="serif" style="font-size:23px;">Thanks for scrolling this far.</div>
         <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:center;">
           <a href="mailto:ritabrataganguly7@gmail.com">Email</a>
           <a href="https://www.linkedin.com/in/rbganguly">LinkedIn</a>
