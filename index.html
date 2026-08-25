@@ -197,7 +197,7 @@
     [data-theme="dark"] h1{color:#E5C67F;}
 
     #splash{position:fixed;inset:0;z-index:999;background:var(--bg);
-      display:flex;align-items:center;justify-content:center;transition:opacity .55s ease;}
+      display:flex;align-items:center;justify-content:center;transition:opacity .7s cubic-bezier(.4,0,.2,1);}
     #splash.done{opacity:0;pointer-events:none;}
     #greet{font-family:'Young Serif',Georgia,serif;font-size:66px;line-height:1.15;
       color:var(--ink);text-align:center;padding:0 24px;animation:gpop .24s ease-out both;}
@@ -514,12 +514,14 @@ function start() {
     i++;
     if (i >= words.length) {
       clearInterval(timer);
-      splash.classList.add('done');
       try { sessionStorage.setItem('greeted', '1'); } catch (e) {}
       setTimeout(function () {
-        if (splash.parentNode) splash.parentNode.removeChild(splash);
-      }, 600);
-      start();
+        splash.classList.add('done');
+        start();
+        setTimeout(function () {
+          if (splash.parentNode) splash.parentNode.removeChild(splash);
+        }, 800);
+      }, 620);
       return;
     }
     greet.textContent = words[i];
