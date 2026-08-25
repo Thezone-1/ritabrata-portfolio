@@ -39,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="font-sans font-normal">
         <Providers>
+          <div className="progress" aria-hidden />
           <Splash />
           <ThemeToggle />
           {children}
