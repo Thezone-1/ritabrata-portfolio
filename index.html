@@ -107,6 +107,7 @@
       .figs>.fig:nth-child(odd){padding-left:0;border-left:0;}
       .card{padding:22px 22px;}
       .art{margin:-22px -22px 10px;height:92px;}
+      .strip{margin:-22px -22px 10px;height:80px;}
       .portrait{min-height:330px;}
     }
     @media (prefers-reduced-motion:reduce){
@@ -143,6 +144,14 @@
     .p .pn{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;color:#1F49CE;padding-top:5px;}
     .p h4{margin:0 0 5px;}
     .p .body{font-size:14.5px;line-height:1.58;}
+
+    .strip{margin:-26px -28px 10px;height:88px;overflow:hidden;}
+    .strip svg{width:100%;height:100%;display:block;}
+    .btn{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin-top:auto;
+      background:#1F49CE;color:#FFFFFF;border-radius:999px;padding:10px 17px;
+      font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+      transition:background .35s ease,transform .35s ease;}
+    .btn:hover{background:#16379C;color:#FFFFFF;transform:translateX(3px);}
   </style>
 </head>
 <body>
@@ -206,6 +215,9 @@
       <div class="card dark reveal" style="justify-content:space-between;">
         <div class="eyebrow">Connect</div>
         <div class="rows">
+          <a class="row" href="/resume.pdf">
+            <span class="lbl">Resume</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+          </a>
           <a class="row" href="https://www.linkedin.com/in/rbganguly">
             <span class="lbl">LinkedIn</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
           </a>
@@ -215,12 +227,26 @@
         </div>
       </div>
       <div class="card reveal">
+        <div class="strip">
+          <svg viewBox="0 0 300 88" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="wg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#1F49CE"/><stop offset="1" stop-color="#6B4AD4"/>
+            </linearGradient></defs>
+            <rect width="300" height="88" fill="url(#wg)"/>
+            <g fill="#FFFFFF" opacity=".3">
+              <rect x="26" y="26" width="128" height="7" rx="3.5"/>
+              <rect x="26" y="42" width="92" height="7" rx="3.5"/>
+              <rect x="26" y="58" width="112" height="7" rx="3.5"/>
+            </g>
+            <circle cx="242" cy="30" r="27" fill="#EE5B47" opacity=".9"/>
+            <circle cx="274" cy="58" r="17" fill="#E39A1C"/>
+          </svg>
+        </div>
         <div class="eyebrow">Writing</div>
         <h4 class="h4">Notes on performance and reliability.</h4>
-        <div class="todo">
-          <div class="mono" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#1F49CE;margin-bottom:8px;">To fill in</div>
-          <p class="body" style="font-size:14px;">[RITABRATA: three post titles and where you publish, or say the word and this card goes.]</p>
-        </div>
+        <a class="btn" href="/blog">Read the blog
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+        </a>
       </div>
     </div>
     <div class="card c12 reveal">
