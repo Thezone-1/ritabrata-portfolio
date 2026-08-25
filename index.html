@@ -136,6 +136,11 @@
     .trace{position:absolute;left:0;right:0;bottom:0;height:104px;pointer-events:none;opacity:.5;}
     .trace svg{width:100%;height:100%;display:block;}
     .figs,.card > .eyebrow{position:relative;z-index:2;}
+
+    .traits{display:flex;flex-direction:column;gap:9px;margin:2px 0;}
+    .trait{display:flex;gap:11px;align-items:flex-start;}
+    .trait svg{flex:0 0 auto;width:17px;height:17px;margin-top:2px;}
+    .trait span{font-size:14.5px;line-height:1.55;color:#5B6C8B;}
   </style>
 </head>
 <body>
@@ -159,10 +164,17 @@
       </div>
     </div>
 
-    <div class="card c5 reveal" style="justify-content:center;">
-      <div class="eyebrow">Currently</div>
-      <h2 class="h3">QA Engineer at Real, a Nasdaq listed property technology company.</h2>
-      <p class="body">Before that, two and a half years as a performance engineer at PwC India, testing enterprise platforms across banking, FMCG and education until they told the truth about their limits.</p>
+    <div class="card c5 reveal">
+      <div class="eyebrow">About</div>
+      <h2 class="h3">Resilient, ambitious, resourceful.</h2>
+      <p class="body">Problem solving is not just my job, it is the part of it I enjoy most. Across BFSI, EdTech and FMCG I have worked alongside some of the most respected and capable people in the industry.</p>
+      <div class="traits">
+        <div class="trait"><svg viewBox="0 0 24 24" fill="none" stroke="#1F49CE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"></path></svg><span>Picks up new things quickly.</span></div>
+        <div class="trait"><svg viewBox="0 0 24 24" fill="none" stroke="#1F49CE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h6"></path><path d="M4 12h16"></path><path d="M4 18h10"></path></svg><span>Breaks complex things down and delivers them with clarity, to whoever is in the room.</span></div>
+        <div class="trait"><svg viewBox="0 0 24 24" fill="none" stroke="#1F49CE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"></circle><path d="M3 20a6 6 0 0 1 12 0"></path><path d="M16.5 5.6a3.2 3.2 0 0 1 0 5.5"></path><path d="M18 14.4A6 6 0 0 1 21 20"></path></svg><span>Reads people well, and stays the calm head under pressure.</span></div>
+      </div>
+      <p class="body">Always open to conversations on SRE, performance tuning, DevOps automation, cloud native tooling, observability and reliability engineering.</p>
+      <p class="serif" style="font-style:italic;font-size:19px;line-height:1.35;color:#0F1E3A;margin:2px 0 0;">Let's build systems that don't just work, they fly.</p>
     </div>
 
     <div class="card dark c3 reveal" style="justify-content:space-between;">
@@ -208,7 +220,7 @@
     <div class="card c5 reveal">
       <div class="eyebrow">Dec 2025 to present &middot; Real</div>
       <h3 class="h3">QA Engineer</h3>
-      <p class="body">Quality engineering at Real, listed on the Nasdaq as REAX.</p>
+      <p class="body">Quality engineering at Real, a property technology company listed on the Nasdaq as REAX. Before this, two and a half years testing enterprise platforms at PwC India until they told the truth about their limits.</p>
       <div class="todo">
         <div class="mono" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#1F49CE;margin-bottom:8px;">To fill in</div>
         <p class="body" style="font-size:14.5px;">[RITABRATA: two or three lines on what you own here, ideally with one number. What was the state of quality when you arrived, what did you change, what moved.]</p>
