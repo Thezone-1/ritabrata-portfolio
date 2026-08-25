@@ -6,8 +6,8 @@
   :root {
     color-scheme: light;
     --bg: #f7f4ee;
-    --dot: #ded6c6;
-    --jaali: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23B49A6E' stroke-opacity='0.42' stroke-width='1'%3E%3Ccircle cx='0' cy='0' r='60'/%3E%3Ccircle cx='120' cy='0' r='60'/%3E%3Ccircle cx='0' cy='120' r='60'/%3E%3Ccircle cx='120' cy='120' r='60'/%3E%3Ccircle cx='60' cy='60' r='60'/%3E%3Ccircle cx='60' cy='60' r='13'/%3E%3Ccircle cx='0' cy='60' r='13'/%3E%3Ccircle cx='120' cy='60' r='13'/%3E%3Ccircle cx='60' cy='0' r='13'/%3E%3Ccircle cx='60' cy='120' r='13'/%3E%3C/g%3E%3C/svg%3E");
+    --dot: #e7e0d2;
+    --jaali: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23B49A6E' stroke-opacity='0.22' stroke-width='1'%3E%3Ccircle cx='0' cy='0' r='60'/%3E%3Ccircle cx='120' cy='0' r='60'/%3E%3Ccircle cx='0' cy='120' r='60'/%3E%3Ccircle cx='120' cy='120' r='60'/%3E%3Ccircle cx='60' cy='60' r='60'/%3E%3Ccircle cx='60' cy='60' r='13'/%3E%3Ccircle cx='0' cy='60' r='13'/%3E%3Ccircle cx='120' cy='60' r='13'/%3E%3Ccircle cx='60' cy='0' r='13'/%3E%3Ccircle cx='60' cy='120' r='13'/%3E%3C/g%3E%3C/svg%3E");
     --card: #ffffff;
     --ink: #0f1e3a;
     --muted: #5b6c8b;
@@ -34,8 +34,8 @@
   [data-theme="dark"] {
     color-scheme: dark;
     --bg: #0b1220;
-    --dot: #1c2740;
-    --jaali: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23C9A961' stroke-opacity='0.15' stroke-width='1'%3E%3Ccircle cx='0' cy='0' r='60'/%3E%3Ccircle cx='120' cy='0' r='60'/%3E%3Ccircle cx='0' cy='120' r='60'/%3E%3Ccircle cx='120' cy='120' r='60'/%3E%3Ccircle cx='60' cy='60' r='60'/%3E%3Ccircle cx='60' cy='60' r='13'/%3E%3Ccircle cx='0' cy='60' r='13'/%3E%3Ccircle cx='120' cy='60' r='13'/%3E%3Ccircle cx='60' cy='0' r='13'/%3E%3Ccircle cx='60' cy='120' r='13'/%3E%3C/g%3E%3C/svg%3E");
+    --dot: #161f33;
+    --jaali: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23C9A961' stroke-opacity='0.09' stroke-width='1'%3E%3Ccircle cx='0' cy='0' r='60'/%3E%3Ccircle cx='120' cy='0' r='60'/%3E%3Ccircle cx='0' cy='120' r='60'/%3E%3Ccircle cx='120' cy='120' r='60'/%3E%3Ccircle cx='60' cy='60' r='60'/%3E%3Ccircle cx='60' cy='60' r='13'/%3E%3Ccircle cx='0' cy='60' r='13'/%3E%3Ccircle cx='120' cy='60' r='13'/%3E%3Ccircle cx='60' cy='0' r='13'/%3E%3Ccircle cx='60' cy='120' r='13'/%3E%3C/g%3E%3C/svg%3E");
     --card: #121c2f;
     --ink: #e9eef8;
     --muted: #93a2be;
