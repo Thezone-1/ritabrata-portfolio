@@ -12,7 +12,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Mrs+Saint+Delafield&display=swap">
   <style>
     *{box-sizing:border-box;}
     html{scroll-behavior:smooth;}
@@ -45,7 +45,7 @@
     .card.accent .eyebrow{color:#C4D2FA;}
     .card.accent .body{color:#D5DFFB;}
 
-    .hero{padding:58px 0 40px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;}
+    .hero{padding:104px 0 44px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;}
     .hero h1{font-size:88px;line-height:1.02;letter-spacing:-.022em;margin:0;color:#0F1E3A;font-weight:600;}
     .hero p{font-size:19px;line-height:1.45;color:#5B6C8B;margin:0;max-width:32ch;}
 
@@ -98,7 +98,8 @@
     @keyframes rise{to{transform:translateY(0);}}
 
     @media (max-width:980px){
-      .hero{padding:44px 0 32px;}
+      .hero{padding:74px 0 30px;}
+      .sig{top:18px;right:20px;font-size:38px;}
       .hero h1{font-size:46px;}
       .hero p{font-size:18px;}
       .c3,.c4,.c5,.c7,.c8{grid-column:span 12;}
@@ -146,11 +147,17 @@
       font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
       transition:background .35s ease,transform .35s ease;}
     .btn:hover{background:#16379C;color:#FFFFFF;transform:translateX(3px);}
+
+    .sig{position:absolute;top:30px;right:30px;z-index:3;pointer-events:none;
+      font-family:'Mrs Saint Delafield',cursive;font-size:52px;line-height:1;
+      color:#1F49CE;opacity:.92;transform:rotate(-6deg);}
   </style>
 </head>
 <body>
 
 <div class="shell">
+
+  <div class="sig" aria-hidden="true">Ritab</div>
 
   <div class="hero">
     <h1 class="serif" id="name">Ritabrata Ganguly</h1>
@@ -172,7 +179,7 @@
     <div class="card c5 reveal">
       <div class="eyebrow">About</div>
       <h2 class="h3">Calm under load.</h2>
-      <p class="body">Ritabrata works on the gap between what a system claims and what it actually does. Two and a half years at PwC, across banking, FMCG and education, taught him that the bottleneck is rarely where anyone expects it, and that a finding only counts once the person holding the budget can repeat it back. He came to engineering from chemical engineering, and to leadership early, running a two thousand person festival and co-founding two businesses before he graduated. He measures before he argues, stays the steady head in the room, and judges the work by what still runs after he has moved on.</p>
+      <p class="body">Ritabrata works on the gap between what a system claims and what it actually does. Two and a half years at PwC across banking, FMCG and education taught him that the bottleneck is rarely where anyone expects, and that a finding only counts once the budget holder can repeat it back. He came to engineering from chemical engineering, and to leadership early. He measures before he argues, and judges the work by what still runs after he has gone.</p>
       <p class="serif" style="font-style:italic;font-size:19px;line-height:1.35;color:#0F1E3A;margin:4px 0 0;">Let's build systems that don't just work, they fly.</p>
     </div>
 
