@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ritabrata Ganguly</title>
   <meta name="description" content="Performance and reliability engineer. AWS Certified Solutions Architect Associate. Kolkata, India.">
@@ -14,86 +15,118 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Mrs+Saint+Delafield&display=swap">
   <style>
+    :root{
+      color-scheme:light;
+      --bg:#F2F5FB; --dot:#C6D1E6; --card:#FFFFFF; --ink:#0F1E3A; --muted:#5B6C8B;
+      --line:#E1E8F4; --accent:#1F49CE; --accent-2:#16379C;
+      --accent-solid:#1F49CE; --accent-solid-2:#16379C;
+      --deep:#101E3B; --deep-ink:#EAF0FB; --deep-muted:#93A6C7;
+      --portrait-bg:#E4EAF6; --todo-bg:#F6F8FE; --todo-line:rgba(31,73,206,.42); --sig:#15171C;
+      --shadow:0 1px 2px rgba(15,30,58,.05),0 10px 30px rgba(15,30,58,.06);
+      --shadow-hi:0 2px 4px rgba(15,30,58,.06),0 20px 46px rgba(15,30,58,.11);
+      --grain-blend:multiply; --grain-op:.45;
+      --bloom:radial-gradient(120% 80% at 50% 0%,rgba(255,255,255,.55),rgba(226,233,246,0) 60%);
+    }
+    [data-theme="dark"]{
+      color-scheme:dark;
+      --bg:#0B1220; --dot:#1C2740; --card:#121C2F; --ink:#E9EEF8; --muted:#93A2BE;
+      --line:#23314A; --accent:#7EA0FF; --accent-2:#A5BDFF;
+      --accent-solid:#2B54D8; --accent-solid-2:#1E40B8;
+      --deep:#0A1526; --deep-ink:#E9EEF8; --deep-muted:#93A6C7;
+      --portrait-bg:#1A2438; --todo-bg:#16223A; --todo-line:rgba(126,160,255,.42); --sig:#E9EEF8;
+      --shadow:0 1px 2px rgba(0,0,0,.5),0 10px 30px rgba(0,0,0,.42);
+      --shadow-hi:0 2px 4px rgba(0,0,0,.55),0 20px 46px rgba(0,0,0,.5);
+      --grain-blend:overlay; --grain-op:.14;
+      --bloom:radial-gradient(120% 80% at 50% 0%,rgba(96,128,208,.14),rgba(11,18,32,0) 60%);
+    }
+    .themetog{position:fixed;top:20px;right:20px;z-index:80;width:42px;height:42px;
+      border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);
+      display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;
+      box-shadow:var(--shadow);transition:transform .35s ease,border-color .35s ease;}
+    .themetog:hover{transform:translateY(-2px);border-color:var(--accent);}
+    .themetog svg{width:18px;height:18px;}
+    [data-theme="dark"] .themetog .i-moon{display:none;}
+    html:not([data-theme="dark"]) .themetog .i-sun{display:none;}
     *{box-sizing:border-box;}
     html{scroll-behavior:smooth;}
     body{
-      margin:0;color:#0F1E3A;background-color:#F2F5FB;
-      background-image:radial-gradient(#C6D1E6 1px,transparent 1px);
+      margin:0;color:var(--ink);background-color:var(--bg);
+      background-image:radial-gradient(var(--dot) 1px,transparent 1px);
       background-size:22px 22px;background-position:-1px -1px;
       font-family:'IBM Plex Sans',system-ui,sans-serif;font-weight:400;
       -webkit-font-smoothing:antialiased;
     }
-    a{color:#1F49CE;text-decoration:none;}
-    a:hover{color:#16379C;}
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{color:var(--accent-2);}
     .serif{font-family:'Newsreader',Georgia,'Times New Roman',serif;font-weight:500;}
     .mono{font-family:'IBM Plex Mono',ui-monospace,monospace;}
     .shell{max-width:1240px;margin:0 auto;padding:0 28px;}
 
-    .eyebrow{line-height:1;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#5B6C8B;}
-    .body{font-size:15px;line-height:1.6;color:#5B6C8B;margin:0;}
+    .eyebrow{line-height:1;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+    .body{font-size:15px;line-height:1.6;color:var(--muted);margin:0;}
 
     .card{
-      background:#FFFFFF;border-radius:18px;padding:26px 28px;
-      box-shadow:0 1px 2px rgba(15,30,58,.05),0 10px 30px rgba(15,30,58,.06);
+      background:var(--card);border-radius:18px;padding:26px 28px;
+      box-shadow:var(--shadow);
       display:flex;flex-direction:column;gap:12px;
     }
-    .card:hover{box-shadow:0 2px 4px rgba(15,30,58,.06),0 20px 46px rgba(15,30,58,.11);}
-    .card.dark{background:#101E3B;color:#EAF0FB;}
-    .card.dark .eyebrow{color:#93A6C7;}
-    .card.dark .body{color:#93A6C7;}
-    .card.accent{background:#1F49CE;color:#FFFFFF;}
+    .card:hover{box-shadow:var(--shadow-hi);}
+    .card.dark{background:var(--deep);color:var(--deep-ink);}
+    .card.dark .eyebrow{color:var(--deep-muted);}
+    .card.dark .body{color:var(--deep-muted);}
+    .card.accent{background:var(--accent-solid);color:#FFFFFF;}
     .card.accent .eyebrow{color:#C4D2FA;}
     .card.accent .body{color:#D5DFFB;}
 
     .hero{padding:104px 0 44px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;}
-    .hero h1{font-size:88px;line-height:1.02;letter-spacing:-.022em;margin:0;color:#0F1E3A;font-weight:600;}
-    .hero p{font-size:19px;line-height:1.45;color:#5B6C8B;margin:0;max-width:32ch;}
+    .hero h1{font-size:88px;line-height:1.02;letter-spacing:-.022em;margin:0;color:var(--ink);font-weight:600;}
+    .hero p{font-size:19px;line-height:1.45;color:var(--muted);margin:0;max-width:32ch;}
 
     .bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px;padding-bottom:28px;}
     .c3{grid-column:span 3;} .c4{grid-column:span 4;} .c5{grid-column:span 5;}
     .c7{grid-column:span 7;} .c8{grid-column:span 8;} .c12{grid-column:span 12;}
 
-    .portrait{position:relative;padding:0;overflow:hidden;min-height:372px;background:#E4EAF6;justify-content:flex-end;}
+    .portrait{position:relative;padding:0;overflow:hidden;min-height:372px;background:var(--portrait-bg);justify-content:flex-end;}
     .portrait .plate{position:relative;z-index:2;padding:22px 24px;background:linear-gradient(to top,rgba(15,30,58,.86),rgba(15,30,58,0));color:#fff;display:flex;flex-direction:column;gap:4px;}
     .slot{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;z-index:1;}
 
     .figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:2px;}
     .figs>.fig{padding:2px 30px;}
     .figs>.fig:first-child{padding-left:0;}
-    .figs>.fig+.fig{border-left:1px solid #E1E8F4;}
+    .figs>.fig+.fig{border-left:1px solid var(--line);}
     .fig{display:flex;flex-direction:column;gap:4px;}
-    .fig b{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:56px;line-height:1;color:#1F49CE;font-variant-numeric:tabular-nums;}
-    .fig span{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:#5B6C8B;line-height:1.5;}
+    .fig b{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:56px;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums;}
+    .fig span{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);line-height:1.5;}
 
     .rows{display:flex;flex-direction:column;}
-    .row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(234,240,251,.14);color:#EAF0FB;}
+    .row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(234,240,251,.14);color:var(--deep-ink);}
     .row:last-child{border-bottom:0;}
     .row:hover{color:#FFFFFF;}
     .row .lbl{font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:20px;}
     .row svg{opacity:.55;transition:opacity .35s ease,transform .35s ease;}
     .row:hover svg{opacity:1;transform:translate(3px,-3px);}
 
-    .stat{display:flex;gap:14px;padding:10px 0;border-top:1px solid #E1E8F4;}
-    .stat b{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:500;font-size:13px;color:#1F49CE;min-width:58px;}
-    .stat span{font-size:14.5px;line-height:1.6;color:#5B6C8B;}
+    .stat{display:flex;gap:14px;padding:10px 0;border-top:1px solid var(--line);}
+    .stat b{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:500;font-size:13px;color:var(--accent);min-width:58px;}
+    .stat span{font-size:14.5px;line-height:1.6;color:var(--muted);}
 
     .tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(82px,1fr));gap:8px;margin-top:2px;}
     .tool{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;
-      padding:15px 6px;border:1px solid #E1E8F4;border-radius:12px;background:#FFFFFF;
+      padding:15px 6px;border:1px solid var(--line);border-radius:12px;background:var(--card);
       transition:transform .35s cubic-bezier(.22,.7,.25,1),border-color .35s ease,background-color .35s ease;}
-    .tool:hover{transform:translateY(-3px);border-color:#C6D1E6;background:#F8FAFF;}
+    .tool:hover{transform:translateY(-3px);border-color:var(--dot);background:#F8FAFF;}
     .tool svg{width:23px;height:23px;display:block;}
     .tool span{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:.05em;
-      text-transform:uppercase;color:#5B6C8B;text-align:center;line-height:1.3;}
+      text-transform:uppercase;color:var(--muted);text-align:center;line-height:1.3;}
 
     .h3{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:26px;line-height:1.15;margin:0;letter-spacing:-.008em;}
     .h4{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:20px;line-height:1.2;margin:0;}
     .badge{width:38px;height:38px;}
-    .todo{border:1px dashed rgba(31,73,206,.42);border-radius:12px;padding:15px 17px;background:#F6F8FE;}
+    .todo{border:1px dashed var(--todo-line);border-radius:12px;padding:15px 17px;background:var(--todo-bg);}
 
     .foot{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
-    .foot a{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#5B6C8B;}
-    .foot a:hover{color:#1F49CE;}
+    .foot a{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+    .foot a:hover{color:var(--accent);}
 
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,.7,.25,1),transform .8s cubic-bezier(.22,.7,.25,1),box-shadow .5s ease;}
     .reveal.in{opacity:1;transform:none;}
@@ -126,11 +159,11 @@
     body::before{
       content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E");background-size:160px 160px;
-      mix-blend-mode:multiply;opacity:.45;
+      mix-blend-mode:var(--grain-blend);opacity:var(--grain-op);
     }
     body::after{
       content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
-      background:radial-gradient(120% 80% at 50% 0%,rgba(255,255,255,.55),rgba(226,233,246,0) 60%);
+      background:var(--bloom);
     }
     .shell{position:relative;z-index:1;}
 
@@ -148,19 +181,23 @@
     .strip{margin:-26px -28px 10px;height:88px;overflow:hidden;}
     .strip svg{width:100%;height:100%;display:block;}
     .btn{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin-top:auto;
-      background:#1F49CE;color:#FFFFFF;border-radius:999px;padding:10px 17px;
+      background:var(--accent-solid);color:#FFFFFF;border-radius:999px;padding:10px 17px;
       font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
       transition:background .35s ease,transform .35s ease;}
-    .btn:hover{background:#16379C;color:#FFFFFF;transform:translateX(3px);}
+    .btn:hover{background:var(--accent-solid-2);color:#FFFFFF;transform:translateX(3px);}
 
     .sig{margin-top:auto;padding-top:14px;pointer-events:none;
       font-family:'Mrs Saint Delafield',cursive;font-size:52px;line-height:1.1;
-      color:#15171C;opacity:.92;}
+      color:var(--sig);opacity:.92;}
     .about{text-align:center;align-items:center;}
     .about .body{max-width:40ch;}
   </style>
 </head>
 <body>
+<button class="themetog" id="themetog" type="button" aria-label="Toggle dark mode">
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"></path></svg>
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"></path></svg>
+</button>
 
 <div class="shell">
 
@@ -185,7 +222,7 @@
       <div class="eyebrow">About</div>
       <h2 class="h3">Calm under load.</h2>
       <p class="body">I work on the gap between what a system claims and what it actually does. Two and a half years at PwC across banking, FMCG and education taught me that the bottleneck is rarely where anyone expects, and that a finding only counts once the budget holder can repeat it back. I came to engineering from chemical engineering, and to leadership early. I measure before I argue, and I judge the work by what still runs after I have gone.</p>
-      <p class="serif" style="font-style:italic;font-size:19px;line-height:1.35;color:#0F1E3A;margin:4px 0 0;">Let's build systems that don't just work, they fly.</p>
+      <p class="serif" style="font-style:italic;font-size:19px;line-height:1.35;color:var(--ink);margin:4px 0 0;">Let's build systems that don't just work, they fly.</p>
       <div class="sig" aria-hidden="true">Ritab</div>
     </div>
 
@@ -208,7 +245,7 @@
         <div class="strip">
           <svg viewBox="0 0 300 88" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
             <defs><linearGradient id="wg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#1F49CE"/><stop offset="1" stop-color="#6B4AD4"/>
+              <stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="#6B4AD4"/>
             </linearGradient></defs>
             <rect width="300" height="88" fill="url(#wg)"/>
             <g fill="#FFFFFF" opacity=".3">
@@ -253,7 +290,7 @@
       <h3 class="h3">QA Engineer</h3>
       <p class="body">Quality engineering at Real, listed on the Nasdaq as REAX. Before this, two and a half years in performance at PwC India.</p>
       <div class="todo">
-        <div class="mono" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#1F49CE;margin-bottom:8px;">To fill in</div>
+        <div class="mono" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">To fill in</div>
         <p class="body" style="font-size:14.5px;">[RITABRATA: two lines on what you own here, with one number.]</p>
       </div>
     </div>
@@ -277,9 +314,9 @@
     <div class="card c4 reveal">
       <div class="eyebrow">Also certified</div>
       <div style="display:flex;flex-direction:column;">
-        <div class="stat" style="flex-direction:column;gap:6px;"><h4 class="h4">Lean Six Sigma Yellow Belt</h4><span style="font-size:14.5px;line-height:1.6;color:#5B6C8B;">Process improvement applied to delivery.</span></div>
-        <div class="stat" style="flex-direction:column;gap:6px;"><h4 class="h4">Testing throughout the SDLC</h4><span style="font-size:14.5px;line-height:1.6;color:#5B6C8B;">Shift left practice and quality gates.</span></div>
-        <div class="stat" style="flex-direction:column;gap:6px;"><h4 class="h4">Problem Solving Techniques</h4><span style="font-size:14.5px;line-height:1.6;color:#5B6C8B;">Structured root cause analysis.</span></div>
+        <div class="stat" style="flex-direction:column;gap:6px;"><h4 class="h4">Lean Six Sigma Yellow Belt</h4><span style="font-size:14.5px;line-height:1.6;color:var(--muted);">Process improvement applied to delivery.</span></div>
+        <div class="stat" style="flex-direction:column;gap:6px;"><h4 class="h4">Testing throughout the SDLC</h4><span style="font-size:14.5px;line-height:1.6;color:var(--muted);">Shift left practice and quality gates.</span></div>
+        <div class="stat" style="flex-direction:column;gap:6px;"><h4 class="h4">Problem Solving Techniques</h4><span style="font-size:14.5px;line-height:1.6;color:var(--muted);">Structured root cause analysis.</span></div>
       </div>
     </div>
 
@@ -360,7 +397,7 @@
         <div class="tool"><svg viewBox="0 0 24 24" fill="#326CE5" aria-hidden="true"><path d="M10.204 14.35l.007.01-.999 2.413a5.171 5.171 0 0 1-2.075-2.597l2.578-.437.004.005a.44.44 0 0 1 .484.606zm-.833-2.129a.44.44 0 0 0 .173-.756l.002-.011L7.585 9.7a5.143 5.143 0 0 0-.73 3.255l2.514-.725.002-.009zm1.145-1.98a.44.44 0 0 0 .699-.337l.01-.005.15-2.62a5.144 5.144 0 0 0-3.01 1.442l2.147 1.523.004-.002zm.76 2.75l.723.349.722-.347.18-.78-.5-.623h-.804l-.5.623.179.779zm1.5-3.095a.44.44 0 0 0 .7.336l.008.003 2.134-1.513a5.188 5.188 0 0 0-2.992-1.442l.148 2.615.002.001zm10.876 5.97l-5.773 7.181a1.6 1.6 0 0 1-1.248.594l-9.261.003a1.6 1.6 0 0 1-1.247-.596l-5.776-7.18a1.583 1.583 0 0 1-.307-1.34L2.1 5.573c.108-.47.425-.864.863-1.073L11.305.513a1.606 1.606 0 0 1 1.385 0l8.345 3.985c.438.209.755.604.863 1.073l2.062 8.955c.108.47-.005.963-.308 1.34zm-3.289-2.057c-.042-.01-.103-.026-.145-.034-.174-.033-.315-.025-.479-.038-.35-.037-.638-.067-.895-.148-.105-.04-.18-.165-.216-.216l-.201-.059a6.45 6.45 0 0 0-.105-2.332 6.465 6.465 0 0 0-.936-2.163c.052-.047.15-.133.177-.159.008-.09.001-.183.094-.282.197-.185.444-.338.743-.522.142-.084.273-.137.415-.242.032-.024.076-.062.11-.089.24-.191.295-.52.123-.736-.172-.216-.506-.236-.745-.045-.034.027-.08.062-.111.088-.134.116-.217.23-.33.35-.246.25-.45.458-.673.609-.097.056-.239.037-.303.033l-.19.135a6.545 6.545 0 0 0-4.146-2.003l-.012-.223c-.065-.062-.143-.115-.163-.25-.022-.268.015-.557.057-.905.023-.163.061-.298.068-.475.001-.04-.001-.099-.001-.142 0-.306-.224-.555-.5-.555-.275 0-.499.249-.499.555l.001.014c0 .041-.002.092 0 .128.006.177.044.312.067.475.042.348.078.637.056.906a.545.545 0 0 1-.162.258l-.012.211a6.424 6.424 0 0 0-4.166 2.003 8.373 8.373 0 0 1-.18-.128c-.09.012-.18.04-.297-.029-.223-.15-.427-.358-.673-.608-.113-.12-.195-.234-.329-.349-.03-.026-.077-.062-.111-.088a.594.594 0 0 0-.348-.132.481.481 0 0 0-.398.176c-.172.216-.117.546.123.737l.007.005.104.083c.142.105.272.159.414.242.299.185.546.338.743.522.076.082.09.226.1.288l.16.143a6.462 6.462 0 0 0-1.02 4.506l-.208.06c-.055.072-.133.184-.215.217-.257.081-.546.11-.895.147-.164.014-.305.006-.48.039-.037.007-.09.02-.133.03l-.004.002-.007.002c-.295.071-.484.342-.423.608.061.267.349.429.645.365l.007-.001.01-.003.129-.029c.17-.046.294-.113.448-.172.33-.118.604-.217.87-.256.112-.009.23.069.288.101l.217-.037a6.5 6.5 0 0 0 2.88 3.596l-.09.218c.033.084.069.199.044.282-.097.252-.263.517-.452.813-.091.136-.185.242-.268.399-.02.037-.045.095-.064.134-.128.275-.034.591.213.71.248.12.556-.007.69-.282v-.002c.02-.039.046-.09.062-.127.07-.162.094-.301.144-.458.132-.332.205-.68.387-.897.05-.06.13-.082.215-.105l.113-.205a6.453 6.453 0 0 0 4.609.012l.106.192c.086.028.18.042.256.155.136.232.229.507.342.84.05.156.074.295.145.457.016.037.043.09.062.129.133.276.442.402.69.282.247-.118.341-.435.213-.71-.02-.039-.045-.096-.065-.134-.083-.156-.177-.261-.268-.398-.19-.296-.346-.541-.443-.793-.04-.13.007-.21.038-.294-.018-.022-.059-.144-.083-.202a6.499 6.499 0 0 0 2.88-3.622c.064.01.176.03.213.038.075-.05.144-.114.28-.104.266.039.54.138.87.256.154.06.277.128.448.173.036.01.088.019.13.028l.009.003.007.001c.297.064.584-.098.645-.365.06-.266-.128-.537-.423-.608zM16.4 9.701l-1.95 1.746v.005a.44.44 0 0 0 .173.757l.003.01 2.526.728a5.199 5.199 0 0 0-.108-1.674A5.208 5.208 0 0 0 16.4 9.7zm-4.013 5.325a.437.437 0 0 0-.404-.232.44.44 0 0 0-.372.233h-.002l-1.268 2.292a5.164 5.164 0 0 0 3.326.003l-1.27-2.296h-.01zm1.888-1.293a.44.44 0 0 0-.27.036.44.44 0 0 0-.214.572l-.003.004 1.01 2.438a5.15 5.15 0 0 0 2.081-2.615l-2.6-.44-.004.005z"/></svg><span>Kubernetes</span></div>
         <div class="tool"><svg viewBox="0 0 24 24" fill="#2496ED" aria-hidden="true"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></svg><span>Docker</span></div>
         <div class="tool"><svg viewBox="0 0 24 24" fill="none" stroke="#0078D4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8a5 5 0 1 0 0 8c3.5 0 4.5-8 8-8a5 5 0 1 1 0 8c-3.5 0-4.5-8-8-8Z"/></svg><span>Azure DevOps</span></div>
-        <div class="tool"><svg viewBox="0 0 24 24" fill="none" stroke="#1F49CE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h4l2.5-7 4 14 2.6-7H22"/></svg><span>Glowroot</span></div>
+        <div class="tool"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h4l2.5-7 4 14 2.6-7H22"/></svg><span>Glowroot</span></div>
         <div class="tool"><svg viewBox="0 0 24 24" fill="#FF6C37" aria-hidden="true"><path d="M13.527.099C6.955-.744.942 3.9.099 10.473c-.843 6.572 3.8 12.584 10.373 13.428 6.573.843 12.587-3.801 13.428-10.374C24.744 6.955 20.101.943 13.527.099zm2.471 7.485a.855.855 0 0 0-.593.25l-4.453 4.453-.307-.307-.643-.643c4.389-4.376 5.18-4.418 5.996-3.753zm-4.863 4.861l4.44-4.44a.62.62 0 1 1 .847.903l-4.699 4.125-.588-.588zm.33.694l-1.1.238a.06.06 0 0 1-.067-.032.06.06 0 0 1 .01-.073l.645-.645.512.512zm-2.803-.459l1.172-1.172.879.878-1.979.426a.074.074 0 0 1-.085-.039.072.072 0 0 1 .013-.093zm-3.646 6.058a.076.076 0 0 1-.069-.083.077.077 0 0 1 .022-.046h.002l.946-.946 1.222 1.222-2.123-.147zm2.425-1.256a.228.228 0 0 0-.117.256l.203.865a.125.125 0 0 1-.211.117h-.003l-.934-.934-.294-.295 3.762-3.758 1.82-.393.874.874c-1.255 1.102-2.971 2.201-5.1 3.268zm5.279-3.428h-.002l-.839-.839 4.699-4.125a.952.952 0 0 0 .119-.127c-.148 1.345-2.029 3.245-3.977 5.091zm3.657-6.46l-.003-.002a1.822 1.822 0 0 1 2.459-2.684l-1.61 1.613a.119.119 0 0 0 0 .169l1.247 1.247a1.817 1.817 0 0 1-2.093-.343zm2.578 0a1.714 1.714 0 0 1-.271.218h-.001l-1.207-1.207 1.533-1.533c.661.72.637 1.832-.054 2.522zM18.855 6.05a.143.143 0 0 0-.053.157.416.416 0 0 1-.053.45.14.14 0 0 0 .023.197.141.141 0 0 0 .084.03.14.14 0 0 0 .106-.05.691.691 0 0 0 .087-.751.138.138 0 0 0-.194-.033z"/></svg><span>Postman</span></div>
         <div class="tool"><svg viewBox="0 0 24 24" fill="#F03C2E" aria-hidden="true"><path d="M13.09 23.549a1.54 1.54 0 0 1-2.18 0L.451 13.089a1.54 1.54 0 0 1 0-2.179l7.191-7.19 2.733 2.733a1.85 1.85 0 0 0 .964 2.326v6.66a1.849 1.849 0 1 0 1.54 0V8.957l2.508 2.508a1.85 1.85 0 1 0 1.09-1.09l-2.634-2.634a1.85 1.85 0 0 0-2.378-2.377L8.73 2.63 10.91.451a1.54 1.54 0 0 1 2.179 0l10.459 10.46a1.54 1.54 0 0 1 0 2.179z"/></svg><span>Git</span></div>
         <div class="tool"><svg viewBox="0 0 24 24" fill="#3776AB" aria-hidden="true"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg><span>Python</span></div>
@@ -372,7 +409,7 @@
     <div class="card c5 reveal">
       <div class="eyebrow">Education and honours</div>
       <h4 class="h4">B.Tech, Chemical Engineering</h4>
-      <div class="mono" style="font-size:12px;color:#5B6C8B;">NIT Durgapur, 2019 to 2023</div>
+      <div class="mono" style="font-size:12px;color:var(--muted);">NIT Durgapur, 2019 to 2023</div>
       <p class="body">Trained as a chemical engineer. Process thinking transferred better than anyone expected.</p>
       <div style="display:flex;flex-direction:column;margin-top:2px;">
         <div class="stat"><b>2024</b><span>Distinctive Outcomes Award, PwC</span></div>
@@ -387,7 +424,7 @@
         <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:center;">
           <a href="mailto:ritabrataganguly7@gmail.com">Email</a>
           <a href="https://www.linkedin.com/in/rbganguly">LinkedIn</a>
-          <span class="mono" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#93A6C7;">&copy; 2026 Ritabrata Ganguly</span>
+          <span class="mono" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--deep-muted);">&copy; 2026 Ritabrata Ganguly</span>
         </div>
       </div>
     </div>
@@ -443,5 +480,16 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+<script>
+(function () {
+  var b = document.getElementById('themetog');
+  if (!b) return;
+  b.addEventListener('click', function () {
+    var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+})();
+</script>
 </body>
 </html>
