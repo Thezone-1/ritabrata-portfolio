@@ -139,11 +139,10 @@
     .stack{display:flex;flex-direction:column;gap:16px;}
     .stack > .card{flex:1 1 auto;}
     .princ{display:flex;flex-direction:column;margin-top:2px;}
-    .p{display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;padding:13px 0;border-top:1px solid #E1E8F4;}
+    .p{display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;padding:11px 0;border-top:1px solid #E1E8F4;align-items:baseline;}
     .p:first-child{border-top:0;padding-top:2px;}
-    .p .pn{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;color:#1F49CE;padding-top:5px;}
-    .p h4{margin:0 0 5px;}
-    .p .body{font-size:14.5px;line-height:1.58;}
+    .p .pn{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;color:#1F49CE;}
+    .p h4{margin:0;}
 
     .strip{margin:-26px -28px 10px;height:88px;overflow:hidden;}
     .strip svg{width:100%;height:100%;display:block;}
@@ -181,31 +180,19 @@
       <div class="princ">
         <div class="p">
           <span class="pn">01</span>
-          <div>
-            <h4 class="h4">Measure before you argue.</h4>
-            <p class="body">A load profile ends the debate faster than a meeting does.</p>
-          </div>
+          <h4 class="h4">Measure before you argue.</h4>
         </div>
         <div class="p">
           <span class="pn">02</span>
-          <div>
-            <h4 class="h4">The bottleneck is never where you expect.</h4>
-            <p class="body">So test the assumption before you touch the fix.</p>
-          </div>
+          <h4 class="h4">The bottleneck is never where you expect.</h4>
         </div>
         <div class="p">
           <span class="pn">03</span>
-          <div>
-            <h4 class="h4">A finding nobody acts on is not a finding.</h4>
-            <p class="body">If the budget holder cannot repeat it back, it is not done.</p>
-          </div>
+          <h4 class="h4">A finding nobody acts on is not a finding.</h4>
         </div>
         <div class="p">
           <span class="pn">04</span>
-          <div>
-            <h4 class="h4">Leave the team able to do it without me.</h4>
-            <p class="body">What still runs after I go is the real measure.</p>
-          </div>
+          <h4 class="h4">Leave the team able to work without me.</h4>
         </div>
       </div>
       <p class="serif" style="font-style:italic;font-size:19px;line-height:1.35;color:#0F1E3A;margin:4px 0 0;">Let's build systems that don't just work, they fly.</p>
