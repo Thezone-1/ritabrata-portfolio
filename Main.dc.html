@@ -1,0 +1,318 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
+  <style>
+    *{box-sizing:border-box;}
+    body{margin:0;background:#0A1730;color:#ECE8DF;font-family:'IBM Plex Sans',system-ui,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;}
+    a{color:#C9A961;text-decoration:none;}
+    a:hover{color:#E2C88C;}
+    .wrap{max-width:1160px;margin:0 auto;padding:0 64px;}
+    .serif{font-family:'Instrument Serif',Georgia,'Times New Roman',serif;font-weight:400;}
+    .mono{font-family:'IBM Plex Mono',ui-monospace,monospace;}
+    .tag{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#C9A961;font-weight:400;}
+    .sechead{font-size:44px;line-height:1.1;letter-spacing:-.01em;margin:0;color:#ECE8DF;}
+    .lede{font-size:17px;line-height:1.7;color:#93A1BE;max-width:52ch;margin:0;}
+    .chip{font-size:12px;color:#93A1BE;border:1px solid rgba(201,169,97,.24);padding:8px 15px;}
+    .fade{animation:fu .9s cubic-bezier(.2,.7,.3,1) both;}
+    @keyframes fu{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+    @media (prefers-reduced-motion:reduce){.fade{animation:none;}}
+  </style>
+</helmet>
+
+<div style="background:#0A1730;">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;height:76px;max-width:1160px;margin:0 auto;padding:0 64px;border-bottom:1px solid rgba(201,169,97,.20);">
+    <div class="mono" style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#ECE8DF;">Ritabrata Ganguly</div>
+    <div style="display:flex;gap:34px;align-items:center;">
+      <a class="mono" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#93A1BE;" href="#work">Work</a>
+      <a class="mono" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#93A1BE;" href="#certifications">Certifications</a>
+      <a class="mono" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#93A1BE;" href="#built">Built</a>
+      <a class="mono" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#C9A961;" href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <div class="wrap fade" style="padding-top:104px;padding-bottom:104px;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:72px;align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:34px;">
+      <div class="tag">Performance and Reliability Engineering</div>
+      <h1 class="serif" style="font-size:82px;line-height:1.02;letter-spacing:-.02em;margin:0;color:#ECE8DF;text-wrap:pretty;">
+        I find where systems break<br>before the people<br>using them do.
+      </h1>
+      <p class="lede" style="font-size:19px;">
+        Three years turning slow, opaque enterprise platforms into fast ones teams can
+        actually see inside. Banking, FMCG and education, at the scale where a
+        two second regression becomes a support queue.
+      </p>
+      <div style="display:flex;gap:16px;align-items:center;padding-top:8px;">
+        <a class="mono" href="#contact" style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#0A1730;background:#C9A961;padding:15px 30px;">Get in touch</a>
+        <a class="mono" href="#work" style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#93A1BE;padding:15px 4px;">Selected work</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:22px;">
+      <div style="aspect-ratio:4/5;border:1px solid rgba(201,169,97,.32);background:#0D1F3F;display:flex;align-items:center;justify-content:center;">
+        <div class="mono" style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#7E683A;text-align:center;line-height:2;">[ Portrait ]<br>replace with photo</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:11px;">
+        <div class="mono" style="font-size:12px;color:#93A1BE;letter-spacing:.04em;">QA Engineer, Real (Nasdaq: REAX)</div>
+        <div class="mono" style="font-size:12px;color:#93A1BE;letter-spacing:.04em;">Previously Performance Engineer, PwC India</div>
+        <div class="mono" style="font-size:12px;color:#93A1BE;letter-spacing:.04em;">Kolkata, India</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid rgba(201,169,97,.20);border-bottom:1px solid rgba(201,169,97,.20);background:#0D1F3F;">
+    <div class="wrap" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;">
+      <div style="padding:52px 34px 52px 0;display:flex;flex-direction:column;gap:12px;">
+        <div class="serif" style="font-size:52px;line-height:1;color:#C9A961;">75K<span style="font-size:26px;">+</span></div>
+        <div class="mono" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#93A1BE;line-height:1.8;">End users on platforms<br>I instrumented</div>
+      </div>
+      <div style="padding:52px 34px;border-left:1px solid rgba(201,169,97,.20);display:flex;flex-direction:column;gap:12px;">
+        <div class="serif" style="font-size:52px;line-height:1;color:#C9A961;">20<span style="font-size:26px;">%</span></div>
+        <div class="mono" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#93A1BE;line-height:1.8;">Faster issue<br>detection</div>
+      </div>
+      <div style="padding:52px 34px;border-left:1px solid rgba(201,169,97,.20);display:flex;flex-direction:column;gap:12px;">
+        <div class="serif" style="font-size:52px;line-height:1;color:#C9A961;">30<span style="font-size:26px;">%</span></div>
+        <div class="mono" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#93A1BE;line-height:1.8;">Less manual test<br>execution</div>
+      </div>
+      <div style="padding:52px 0 52px 34px;border-left:1px solid rgba(201,169,97,.20);display:flex;flex-direction:column;gap:12px;">
+        <div class="serif" style="font-size:52px;line-height:1;color:#C9A961;">3</div>
+        <div class="mono" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#93A1BE;line-height:1.8;">Regulated sectors<br>delivered into</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" style="padding-top:120px;padding-bottom:120px;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.6fr);gap:80px;align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <h2 class="serif sechead">How I<br>work</h2>
+      <p class="lede" style="font-size:16px;">Three habits, in order. The third is the one most performance work skips.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;">
+      <div style="display:grid;grid-template-columns:64px minmax(0,1fr);gap:28px;padding:34px 0;border-top:1px solid rgba(201,169,97,.20);">
+        <div class="mono" style="font-size:12px;color:#7E683A;letter-spacing:.1em;padding-top:7px;">i</div>
+        <div style="display:flex;flex-direction:column;gap:13px;">
+          <div class="serif" style="font-size:29px;line-height:1.2;color:#ECE8DF;">Diagnose</div>
+          <div style="font-size:16px;line-height:1.75;color:#93A1BE;">Load, stress, spike and endurance testing until the system tells the truth about its limits. JMeter scripts parameterised and version controlled, never clicked through by hand.</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,1fr);gap:28px;padding:34px 0;border-top:1px solid rgba(201,169,97,.20);">
+        <div class="mono" style="font-size:12px;color:#7E683A;letter-spacing:.1em;padding-top:7px;">ii</div>
+        <div style="display:flex;flex-direction:column;gap:13px;">
+          <div class="serif" style="font-size:29px;line-height:1.2;color:#ECE8DF;">Instrument</div>
+          <div style="font-size:16px;line-height:1.75;color:#93A1BE;">Prometheus, Grafana and Datadog wired so the next failure surfaces in minutes instead of arriving as a support ticket. On one platform that cut detection time by a fifth.</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,1fr);gap:28px;padding:34px 0;border-top:1px solid rgba(201,169,97,.20);border-bottom:1px solid rgba(201,169,97,.20);">
+        <div class="mono" style="font-size:12px;color:#7E683A;letter-spacing:.1em;padding-top:7px;">iii</div>
+        <div style="display:flex;flex-direction:column;gap:13px;">
+          <div class="serif" style="font-size:29px;line-height:1.2;color:#ECE8DF;">Hand it over</div>
+          <div style="font-size:16px;line-height:1.75;color:#93A1BE;">A test only I can run is a test that dies when I leave. Suites go into Jenkins, dashboards go to the team, and the findings get written up in language the business side can act on.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="work" style="background:#0D1F3F;border-top:1px solid rgba(201,169,97,.20);">
+    <div class="wrap" style="padding-top:120px;padding-bottom:120px;display:flex;flex-direction:column;gap:76px;">
+      <h2 class="serif sechead">Selected work</h2>
+
+      <div style="display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.7fr);gap:72px;align-items:start;">
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <div class="serif" style="font-size:31px;line-height:1.2;color:#ECE8DF;">PwC India</div>
+          <div class="mono" style="font-size:12px;color:#C9A961;letter-spacing:.06em;">Performance Engineer</div>
+          <div class="mono" style="font-size:12px;color:#93A1BE;letter-spacing:.06em;">Jul 2023 to Nov 2025</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:26px;">
+          <div style="font-size:18px;line-height:1.7;color:#ECE8DF;">Enterprise clients across banking, FMCG and education needed SLA guarantees they had no way to evidence.</div>
+          <div style="font-size:16px;line-height:1.75;color:#93A1BE;">I built load, stress, spike and endurance suites in JMeter, parameterised for reuse across engagements and wired into Jenkins so every release ran them without a person present. Alongside that I rebuilt observability on Prometheus, Grafana and Datadog.</div>
+          <div style="display:flex;flex-direction:column;">
+            <div style="display:flex;gap:20px;padding:15px 0;border-top:1px solid rgba(201,169,97,.20);">
+              <div class="mono" style="font-size:13px;color:#C9A961;min-width:66px;">30%</div>
+              <div style="font-size:15px;line-height:1.6;color:#93A1BE;">reduction in manual test execution effort</div>
+            </div>
+            <div style="display:flex;gap:20px;padding:15px 0;border-top:1px solid rgba(201,169,97,.20);">
+              <div class="mono" style="font-size:13px;color:#C9A961;min-width:66px;">20%</div>
+              <div style="font-size:15px;line-height:1.6;color:#93A1BE;">faster issue detection, across 75,000 plus end users</div>
+            </div>
+            <div style="display:flex;gap:20px;padding:15px 0;border-top:1px solid rgba(201,169,97,.20);border-bottom:1px solid rgba(201,169,97,.20);">
+              <div class="mono" style="font-size:13px;color:#C9A961;min-width:66px;">2024</div>
+              <div style="font-size:15px;line-height:1.6;color:#93A1BE;">Distinctive Outcomes Award</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.7fr);gap:72px;align-items:start;">
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <div class="serif" style="font-size:31px;line-height:1.2;color:#ECE8DF;">Real</div>
+          <div class="mono" style="font-size:12px;color:#C9A961;letter-spacing:.06em;">QA Engineer</div>
+          <div class="mono" style="font-size:12px;color:#93A1BE;letter-spacing:.06em;">Dec 2025 to present</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:26px;">
+          <div style="font-size:18px;line-height:1.7;color:#ECE8DF;">Quality engineering at a Nasdaq listed property technology company.</div>
+          <div style="border:1px dashed rgba(201,169,97,.42);padding:26px 28px;">
+            <div class="mono" style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#C9A961;margin-bottom:11px;">To fill in</div>
+            <div style="font-size:15px;line-height:1.75;color:#93A1BE;">[RITABRATA: two or three lines on what you own here, ideally with one number. What was the state of quality when you arrived, what did you change, what moved.]</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="certifications" class="wrap" style="padding-top:120px;padding-bottom:120px;display:flex;flex-direction:column;gap:56px;">
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px;align-items:end;">
+      <h2 class="serif sechead">Certifications</h2>
+      <p class="lede" style="font-size:16px;">Cloud architecture and process discipline, verified. The AWS pair sits underneath everything above.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;">
+      <div style="border:1px solid rgba(201,169,97,.34);background:#0D1F3F;padding:38px 36px;display:flex;flex-direction:column;gap:22px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px;">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6.5v7c0 4.6 3.8 8.1 9 8.5 5.2-.4 9-3.9 9-8.5v-7L12 2Z"></path><path d="m8.6 12 2.5 2.5 4.3-4.9"></path></svg>
+          <div class="mono" style="font-size:11px;letter-spacing:.16em;color:#7E683A;">SAA-C03</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <div class="serif" style="font-size:27px;line-height:1.22;color:#ECE8DF;">AWS Certified Solutions Architect</div>
+          <div class="mono" style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#C9A961;">Associate</div>
+        </div>
+        <div style="font-size:15px;line-height:1.7;color:#93A1BE;">Designing distributed systems on AWS for cost, resilience and scale. EC2, S3, IAM and CloudWatch in daily use.</div>
+      </div>
+
+      <div style="border:1px solid rgba(201,169,97,.34);background:#0D1F3F;padding:38px 36px;display:flex;flex-direction:column;gap:22px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px;">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97 6 6 0 0 0-11.66-1.4A4 4 0 0 0 6.5 19h11Z"></path></svg>
+          <div class="mono" style="font-size:11px;letter-spacing:.16em;color:#7E683A;">CLF-C02</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <div class="serif" style="font-size:27px;line-height:1.22;color:#ECE8DF;">AWS Certified Cloud Practitioner</div>
+          <div class="mono" style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#C9A961;">Foundational</div>
+        </div>
+        <div style="font-size:15px;line-height:1.7;color:#93A1BE;">Cloud economics, shared responsibility and the service landscape end to end.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;">
+      <div style="border-top:1px solid rgba(201,169,97,.20);padding-top:26px;display:flex;flex-direction:column;gap:11px;">
+        <div class="serif" style="font-size:21px;line-height:1.3;color:#ECE8DF;">Lean Six Sigma Yellow Belt</div>
+        <div style="font-size:14px;line-height:1.65;color:#93A1BE;">Process improvement and waste reduction, applied to delivery rather than manufacturing.</div>
+      </div>
+      <div style="border-top:1px solid rgba(201,169,97,.20);padding-top:26px;display:flex;flex-direction:column;gap:11px;">
+        <div class="serif" style="font-size:21px;line-height:1.3;color:#ECE8DF;">Testing throughout the SDLC</div>
+        <div style="font-size:14px;line-height:1.65;color:#93A1BE;">Software testing foundations, shift left practice and lifecycle placement of quality gates.</div>
+      </div>
+      <div style="border-top:1px solid rgba(201,169,97,.20);padding-top:26px;display:flex;flex-direction:column;gap:11px;">
+        <div class="serif" style="font-size:21px;line-height:1.3;color:#ECE8DF;">Problem Solving Techniques</div>
+        <div style="font-size:14px;line-height:1.65;color:#93A1BE;">Structured root cause analysis, the method behind every diagnosis above.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid rgba(201,169,97,.20);border-bottom:1px solid rgba(201,169,97,.20);background:#0D1F3F;">
+    <div class="wrap" style="padding-top:52px;padding-bottom:52px;display:grid;grid-template-columns:minmax(0,.34fr) minmax(0,2fr);gap:56px;align-items:center;">
+      <div class="tag">Toolkit</div>
+      <div style="display:flex;flex-wrap:wrap;gap:11px;">
+        <span class="mono chip">Datadog</span>
+        <span class="mono chip">Apache JMeter</span>
+        <span class="mono chip">Prometheus</span>
+        <span class="mono chip">Grafana</span>
+        <span class="mono chip">Jenkins</span>
+        <span class="mono chip">AWS</span>
+        <span class="mono chip">Kubernetes</span>
+        <span class="mono chip">Docker</span>
+        <span class="mono chip">Azure DevOps</span>
+        <span class="mono chip">Glowroot</span>
+        <span class="mono chip">Postman</span>
+        <span class="mono chip">Python</span>
+        <span class="mono chip">Bash</span>
+        <span class="mono chip">Linux</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="built" class="wrap" style="padding-top:120px;padding-bottom:120px;display:flex;flex-direction:column;gap:56px;">
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px;align-items:end;">
+      <h2 class="serif sechead">Things I have built<br>and run</h2>
+      <p class="lede" style="font-size:16px;">Before the engineering, four years of starting things and being accountable for whether they worked.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(201,169,97,.20);border:1px solid rgba(201,169,97,.20);">
+      <div style="background:#0A1730;padding:44px 42px;display:flex;flex-direction:column;gap:15px;">
+        <div class="mono" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#C9A961;">Co-founder</div>
+        <div class="serif" style="font-size:30px;line-height:1.2;color:#ECE8DF;">Fugly.in</div>
+        <div style="font-size:15px;line-height:1.7;color:#93A1BE;">An online fashion label built from nothing. Thirty nine sales in the first month, a twenty five person marketing team, and a third more profit once buying followed the trend data.</div>
+      </div>
+      <div style="background:#0A1730;padding:44px 42px;display:flex;flex-direction:column;gap:15px;">
+        <div class="mono" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#C9A961;">Co-founder</div>
+        <div class="serif" style="font-size:30px;line-height:1.2;color:#ECE8DF;">The Placement Diary</div>
+        <div style="font-size:15px;line-height:1.7;color:#93A1BE;">A careers publication that became a service. Seven clients won through direct outreach, and an audience of 3,500 built in six months.</div>
+      </div>
+      <div style="background:#0A1730;padding:44px 42px;display:flex;flex-direction:column;gap:15px;">
+        <div class="mono" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#C9A961;">Head of Operations</div>
+        <div class="serif" style="font-size:30px;line-height:1.2;color:#ECE8DF;">E-Summit 23</div>
+        <div style="font-size:15px;line-height:1.7;color:#93A1BE;">The second largest techno management festival at NIT Durgapur. Two thousand attendees through the door and four sponsors closed, including GeeksforGeeks.</div>
+      </div>
+      <div style="background:#0A1730;padding:44px 42px;display:flex;flex-direction:column;gap:15px;">
+        <div class="mono" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#C9A961;">Vice Chairperson</div>
+        <div class="serif" style="font-size:30px;line-height:1.2;color:#ECE8DF;">ISTE NIT Durgapur</div>
+        <div style="font-size:15px;line-height:1.7;color:#93A1BE;">Eleven events delivered in a year, from a data analytics workshop to a CAD hackathon, with a fifteen person team that lifted channel engagement by a quarter.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#0D1F3F;border-top:1px solid rgba(201,169,97,.20);">
+    <div class="wrap" style="padding-top:104px;padding-bottom:104px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:64px;align-items:start;">
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div class="tag">Education</div>
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <div class="serif" style="font-size:24px;line-height:1.28;color:#ECE8DF;">B.Tech, Chemical Engineering</div>
+          <div class="mono" style="font-size:12px;color:#93A1BE;">NIT Durgapur, 2019 to 2023</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <div class="serif" style="font-size:24px;line-height:1.28;color:#ECE8DF;">Sainik School Purulia</div>
+          <div class="mono" style="font-size:12px;color:#93A1BE;">Mathematics and Computer Science</div>
+        </div>
+        <div style="font-size:15px;line-height:1.7;color:#93A1BE;padding-top:6px;">Trained as a chemical engineer. Process thinking transferred better than anyone expected.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div class="tag">Honours</div>
+        <div style="display:flex;flex-direction:column;">
+          <div style="padding:13px 0;border-bottom:1px solid rgba(201,169,97,.20);font-size:15px;line-height:1.6;color:#ECE8DF;">Distinctive Outcomes Award, PwC, 2024</div>
+          <div style="padding:13px 0;border-bottom:1px solid rgba(201,169,97,.20);font-size:15px;line-height:1.6;color:#ECE8DF;">Winner, Hult Prize On Campus, NIT Durgapur</div>
+          <div style="padding:13px 0;border-bottom:1px solid rgba(201,169,97,.20);font-size:15px;line-height:1.6;color:#ECE8DF;">Top 50, Drona IRIS, 2019</div>
+          <div style="padding:13px 0;font-size:15px;line-height:1.6;color:#ECE8DF;">Winner, District Science Seminar, 2015</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div class="tag">Languages</div>
+        <div style="display:flex;flex-direction:column;">
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid rgba(201,169,97,.20);"><span style="font-size:15px;color:#ECE8DF;">Bengali</span><span class="mono" style="font-size:11px;color:#93A1BE;letter-spacing:.08em;">NATIVE</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid rgba(201,169,97,.20);"><span style="font-size:15px;color:#ECE8DF;">English</span><span class="mono" style="font-size:11px;color:#93A1BE;letter-spacing:.08em;">PROFESSIONAL</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:13px 0;"><span style="font-size:15px;color:#ECE8DF;">Hindi</span><span class="mono" style="font-size:11px;color:#93A1BE;letter-spacing:.08em;">WORKING</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact" class="wrap" style="padding-top:128px;padding-bottom:96px;display:flex;flex-direction:column;gap:44px;">
+    <h2 class="serif" style="font-size:64px;line-height:1.08;letter-spacing:-.015em;margin:0;color:#ECE8DF;max-width:19ch;text-wrap:pretty;">Always up for a conversation about performance and reliability.</h2>
+    <div style="display:flex;gap:44px;align-items:center;flex-wrap:wrap;">
+      <a class="mono" href="mailto:ritabrataganguly7@gmail.com" style="font-size:15px;letter-spacing:.04em;color:#C9A961;border-bottom:1px solid rgba(201,169,97,.5);padding-bottom:5px;">ritabrataganguly7@gmail.com</a>
+      <a class="mono" href="https://www.linkedin.com/in/rbganguly" style="font-size:15px;letter-spacing:.04em;color:#93A1BE;border-bottom:1px solid rgba(201,169,97,.28);padding-bottom:5px;">linkedin.com/in/rbganguly</a>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid rgba(201,169,97,.20);">
+    <div class="wrap" style="height:82px;display:flex;align-items:center;justify-content:space-between;">
+      <div class="mono" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7E683A;">Ritabrata Ganguly</div>
+      <div class="mono" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7E683A;">Kolkata, India</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
