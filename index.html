@@ -57,9 +57,12 @@
     .portrait .plate{position:relative;z-index:2;padding:22px 24px;background:linear-gradient(to top,rgba(15,30,58,.86),rgba(15,30,58,0));color:#fff;display:flex;flex-direction:column;gap:4px;}
     .slot{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;z-index:1;}
 
-    .figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;}
+    .figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:2px;}
+    .figs>.fig{padding:2px 30px;}
+    .figs>.fig:first-child{padding-left:0;}
+    .figs>.fig+.fig{border-left:1px solid #E1E8F4;}
     .fig{display:flex;flex-direction:column;gap:4px;}
-    .fig b{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:42px;line-height:1.05;color:#1F49CE;font-variant-numeric:tabular-nums;}
+    .fig b{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:56px;line-height:1;color:#1F49CE;font-variant-numeric:tabular-nums;}
     .fig span{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:#5B6C8B;line-height:1.5;}
 
     .rows{display:flex;flex-direction:column;}
@@ -99,7 +102,9 @@
       .hero h1{font-size:46px;}
       .hero p{font-size:18px;}
       .c3,.c4,.c5,.c7,.c8{grid-column:span 12;}
-      .figs{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;}
+      .figs{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 0;}
+      .figs>.fig{padding:2px 20px;}
+      .figs>.fig:nth-child(odd){padding-left:0;border-left:0;}
       .card{padding:22px 22px;}
       .portrait{min-height:330px;}
     }
@@ -167,7 +172,7 @@
       </div>
     </div>
 
-    <div class="card c8 reveal">
+    <div class="card c12 reveal">
       <div class="eyebrow">By the numbers</div>
       <div class="figs">
         <div class="fig"><b class="num">75K+</b><span>End users on platforms<br>I instrumented</span></div>
