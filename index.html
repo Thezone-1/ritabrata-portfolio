@@ -133,10 +133,10 @@
     .deco{position:absolute;right:-34px;bottom:-34px;width:196px;height:196px;pointer-events:none;opacity:.17;}
     .deco.gold{opacity:.5;right:-20px;bottom:-20px;width:170px;height:170px;}
     .deco svg{width:100%;height:100%;display:block;}
-    .trace{position:absolute;left:0;right:0;bottom:0;height:104px;pointer-events:none;opacity:.5;}
-    .trace svg{width:100%;height:100%;display:block;}
     .figs,.card > .eyebrow{position:relative;z-index:2;}
 
+    .stack{display:flex;flex-direction:column;gap:16px;}
+    .stack > .card{flex:1 1 auto;}
     .princ{display:flex;flex-direction:column;margin-top:2px;}
     .p{display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;padding:13px 0;border-top:1px solid #E1E8F4;}
     .p:first-child{border-top:0;padding-top:2px;}
@@ -202,26 +202,28 @@
       <p class="serif" style="font-style:italic;font-size:19px;line-height:1.35;color:#0F1E3A;margin:4px 0 0;">Let's build systems that don't just work, they fly.</p>
     </div>
 
-    <div class="card dark c3 reveal" style="justify-content:space-between;">
-      <div class="eyebrow">Connect</div>
-      <div class="rows">
-        <a class="row" href="https://www.linkedin.com/in/rbganguly">
-          <span class="lbl">LinkedIn</span>
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
-        </a>
-        <a class="row" href="mailto:ritabrataganguly7@gmail.com">
-          <span class="lbl">Email</span>
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
-        </a>
-        <a class="row" href="#certifications">
-          <span class="lbl">Certifications</span>
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
-        </a>
+    <div class="c3 stack">
+      <div class="card dark reveal" style="justify-content:space-between;">
+        <div class="eyebrow">Connect</div>
+        <div class="rows">
+          <a class="row" href="https://www.linkedin.com/in/rbganguly">
+            <span class="lbl">LinkedIn</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
+          </a>
+          <a class="row" href="mailto:ritabrataganguly7@gmail.com">
+            <span class="lbl">Email</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
+          </a>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="eyebrow">Writing</div>
+        <h4 class="h4">Notes on performance, reliability and delivery.</h4>
+        <div class="todo">
+          <div class="mono" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#1F49CE;margin-bottom:8px;">To fill in</div>
+          <p class="body" style="font-size:14px;">[RITABRATA: three post titles with one line each, plus where you publish. If you are not writing yet, say so and this card comes off the page.]</p>
+        </div>
       </div>
     </div>
-
     <div class="card c12 reveal">
-      <div class="trace"><svg viewBox="0 0 900 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 96 C90 92 130 60 200 58 S320 78 400 52 S520 12 620 30 S780 70 900 24" fill="none" stroke="#1F49CE" stroke-width="2.5" stroke-linecap="round"/><path d="M0 96 C90 92 130 60 200 58 S320 78 400 52 S520 12 620 30 S780 70 900 24 L900 120 L0 120 Z" fill="#1F49CE" opacity=".07"/></svg></div>
       <div class="eyebrow">By the numbers</div>
       <div class="figs">
         <div class="fig"><b class="num">75K+</b><span>End users on platforms<br>I instrumented</span></div>
