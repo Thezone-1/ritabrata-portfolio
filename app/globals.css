@@ -560,6 +560,7 @@
   }
   .portrait {
     min-height: 330px;
+    padding: 0;
   }
   .sig {
     font-size: 42px;
