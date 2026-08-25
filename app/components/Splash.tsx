@@ -12,12 +12,7 @@ export function Splash() {
   useEffect(() => {
     const root = document.documentElement;
     const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let greeted = false;
-    try {
-      greeted = sessionStorage.getItem("greeted") === "1";
-    } catch {}
-
-    if (still || greeted) {
+    if (still) {
       setGone(true);
       return;
     }
@@ -27,9 +22,6 @@ export function Splash() {
       setIndex((i) => {
         if (i + 1 < greetings.length) return i + 1;
         if (timer.current) clearInterval(timer.current);
-        try {
-          sessionStorage.setItem("greeted", "1");
-        } catch {}
         setTimeout(() => {
           delete root.dataset.splash;
           setLeaving(true);
