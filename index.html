@@ -137,10 +137,12 @@
     .trace svg{width:100%;height:100%;display:block;}
     .figs,.card > .eyebrow{position:relative;z-index:2;}
 
-    .traits{display:flex;flex-direction:column;gap:9px;margin:2px 0;}
-    .trait{display:flex;gap:11px;align-items:flex-start;}
-    .trait svg{flex:0 0 auto;width:17px;height:17px;margin-top:2px;}
-    .trait span{font-size:14.5px;line-height:1.55;color:#5B6C8B;}
+    .princ{display:flex;flex-direction:column;margin-top:2px;}
+    .p{display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;padding:13px 0;border-top:1px solid #E1E8F4;}
+    .p:first-child{border-top:0;padding-top:2px;}
+    .p .pn{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;color:#1F49CE;padding-top:5px;}
+    .p h4{margin:0 0 5px;}
+    .p .body{font-size:14.5px;line-height:1.58;}
   </style>
 </head>
 <body>
@@ -165,16 +167,39 @@
     </div>
 
     <div class="card c5 reveal">
-      <div class="eyebrow">About</div>
-      <h2 class="h3">Resilient, ambitious, resourceful.</h2>
-      <p class="body">Problem solving is not just my job, it is the part of it I enjoy most. Across BFSI, EdTech and FMCG I have worked alongside some of the most respected and capable people in the industry.</p>
-      <div class="traits">
-        <div class="trait"><svg viewBox="0 0 24 24" fill="none" stroke="#1F49CE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"></path></svg><span>Picks up new things quickly.</span></div>
-        <div class="trait"><svg viewBox="0 0 24 24" fill="none" stroke="#1F49CE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h6"></path><path d="M4 12h16"></path><path d="M4 18h10"></path></svg><span>Breaks complex things down and delivers them with clarity, to whoever is in the room.</span></div>
-        <div class="trait"><svg viewBox="0 0 24 24" fill="none" stroke="#1F49CE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"></circle><path d="M3 20a6 6 0 0 1 12 0"></path><path d="M16.5 5.6a3.2 3.2 0 0 1 0 5.5"></path><path d="M18 14.4A6 6 0 0 1 21 20"></path></svg><span>Reads people well, and stays the calm head under pressure.</span></div>
+      <div class="eyebrow">Philosophy</div>
+      <h2 class="h3">How I think about the work.</h2>
+      <div class="princ">
+        <div class="p">
+          <span class="pn">01</span>
+          <div>
+            <h4 class="h4">Measure before you argue.</h4>
+            <p class="body">Most performance conversations start as opinion. The app feels slow, the server must be undersized. A load profile settles it in an afternoon. I would rather arrive with a number than a view.</p>
+          </div>
+        </div>
+        <div class="p">
+          <span class="pn">02</span>
+          <div>
+            <h4 class="h4">The bottleneck is never where people expect.</h4>
+            <p class="body">So I test the assumption before I fix anything. Most of the value in a diagnosis comes from ruling things out cheaply and in the right order, long before the answer turns up.</p>
+          </div>
+        </div>
+        <div class="p">
+          <span class="pn">03</span>
+          <div>
+            <h4 class="h4">A finding nobody acts on is not a finding.</h4>
+            <p class="body">Technical truth has to survive the trip to a business audience. If the person holding the budget cannot repeat it back in one sentence, the work is not done.</p>
+          </div>
+        </div>
+        <div class="p">
+          <span class="pn">04</span>
+          <div>
+            <h4 class="h4">Leave the team able to do it without me.</h4>
+            <p class="body">Suites go into the pipeline, dashboards go to whoever is on call, the method gets written down. What still runs after I have moved on is the real measure of the work.</p>
+          </div>
+        </div>
       </div>
-      <p class="body">Always open to conversations on SRE, performance tuning, DevOps automation, cloud native tooling, observability and reliability engineering.</p>
-      <p class="serif" style="font-style:italic;font-size:19px;line-height:1.35;color:#0F1E3A;margin:2px 0 0;">Let's build systems that don't just work, they fly.</p>
+      <p class="serif" style="font-style:italic;font-size:19px;line-height:1.35;color:#0F1E3A;margin:4px 0 0;">Let's build systems that don't just work, they fly.</p>
     </div>
 
     <div class="card dark c3 reveal" style="justify-content:space-between;">
