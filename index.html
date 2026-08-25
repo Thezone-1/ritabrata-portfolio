@@ -106,6 +106,7 @@
       .figs>.fig{padding:2px 20px;}
       .figs>.fig:nth-child(odd){padding-left:0;border-left:0;}
       .card{padding:22px 22px;}
+      .art{margin:-22px -22px 10px;height:92px;}
       .portrait{min-height:330px;}
     }
     @media (prefers-reduced-motion:reduce){
@@ -125,6 +126,16 @@
       background:radial-gradient(120% 80% at 50% 0%,rgba(255,255,255,.55),rgba(226,233,246,0) 60%);
     }
     .shell{position:relative;z-index:1;}
+
+    .card{position:relative;overflow:hidden;}
+    .art{margin:-26px -28px 10px;height:104px;position:relative;overflow:hidden;}
+    .art svg{width:100%;height:100%;display:block;}
+    .deco{position:absolute;right:-34px;bottom:-34px;width:196px;height:196px;pointer-events:none;opacity:.17;}
+    .deco.gold{opacity:.5;right:-20px;bottom:-20px;width:170px;height:170px;}
+    .deco svg{width:100%;height:100%;display:block;}
+    .trace{position:absolute;left:0;right:0;bottom:0;height:104px;pointer-events:none;opacity:.5;}
+    .trace svg{width:100%;height:100%;display:block;}
+    .figs,.card > .eyebrow{position:relative;z-index:2;}
   </style>
 </head>
 <body>
@@ -173,6 +184,7 @@
     </div>
 
     <div class="card c12 reveal">
+      <div class="trace"><svg viewBox="0 0 900 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 96 C90 92 130 60 200 58 S320 78 400 52 S520 12 620 30 S780 70 900 24" fill="none" stroke="#1F49CE" stroke-width="2.5" stroke-linecap="round"/><path d="M0 96 C90 92 130 60 200 58 S320 78 400 52 S520 12 620 30 S780 70 900 24 L900 120 L0 120 Z" fill="#1F49CE" opacity=".07"/></svg></div>
       <div class="eyebrow">By the numbers</div>
       <div class="figs">
         <div class="fig"><b class="num">75K+</b><span>End users on platforms<br>I instrumented</span></div>
@@ -204,6 +216,7 @@
     </div>
 
     <div class="card accent c4 reveal" id="certifications">
+      <div class="deco"><svg viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#FFFFFF" stroke-width="2"><circle cx="150" cy="150" r="34"/><circle cx="150" cy="150" r="58"/><circle cx="150" cy="150" r="82"/><circle cx="150" cy="150" r="106"/><circle cx="150" cy="150" r="130"/></g></svg></div>
       <svg class="badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6.5v7c0 4.6 3.8 8.1 9 8.5 5.2-.4 9-3.9 9-8.5v-7L12 2Z"></path><path d="m8.6 12 2.5 2.5 4.3-4.9"></path></svg>
       <h3 class="h3" style="margin-top:4px;">AWS Certified Solutions Architect</h3>
       <div class="mono" style="font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;">Associate &middot; SAA-C03</div>
@@ -211,6 +224,7 @@
     </div>
 
     <div class="card dark c4 reveal">
+      <div class="deco gold"><svg viewBox="0 0 200 200" aria-hidden="true"><defs><pattern id="dots-g" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="2" fill="#C9A961"/></pattern></defs><rect width="200" height="200" fill="url(#dots-g)"/></svg></div>
       <svg class="badge" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97 6 6 0 0 0-11.66-1.4A4 4 0 0 0 6.5 19h11Z"></path></svg>
       <h3 class="h3" style="margin-top:4px;">AWS Certified Cloud Practitioner</h3>
       <div class="mono" style="font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#C9A961;">Foundational &middot; CLF-C02</div>
@@ -227,24 +241,65 @@
     </div>
 
     <div class="card c3 reveal">
+      <div class="art">
+        <svg viewBox="0 0 340 112" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="340" height="112" fill="#EE5B47"/>
+          <g fill="none" stroke="#FFD2C6" stroke-width="1.6" opacity=".85">
+            <circle cx="268" cy="30" r="26"/><circle cx="268" cy="30" r="46"/>
+            <circle cx="268" cy="30" r="66"/><circle cx="268" cy="30" r="86"/>
+          </g>
+          <circle cx="268" cy="30" r="15" fill="#FFC2B0"/>
+          <circle cx="64" cy="84" r="9" fill="#FFD2C6" opacity=".7"/>
+        </svg>
+      </div>
       <div class="eyebrow">Co-founder</div>
       <h4 class="h3">Fugly.in</h4>
       <p class="body">An online fashion label built from nothing. Thirty nine sales in month one, a twenty five person marketing team, a third more profit once buying followed the trend data.</p>
     </div>
 
     <div class="card c3 reveal">
+      <div class="art">
+        <svg viewBox="0 0 340 112" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="340" height="112" fill="#E39A1C"/>
+          <g stroke="#FFE6B0" stroke-width="1.7" opacity=".8">
+            <path d="M18 118 L120 -14"/><path d="M18 118 L176 -6"/><path d="M18 118 L232 14"/>
+            <path d="M18 118 L286 40"/><path d="M18 118 L330 70"/><path d="M18 118 L344 104"/>
+          </g>
+          <circle cx="18" cy="118" r="30" fill="#FFD37A"/>
+        </svg>
+      </div>
       <div class="eyebrow">Co-founder</div>
       <h4 class="h3">The Placement Diary</h4>
       <p class="body">A careers publication that became a service. Seven clients won through direct outreach and an audience of 3,500 in six months.</p>
     </div>
 
     <div class="card c3 reveal">
+      <div class="art">
+        <svg viewBox="0 0 340 112" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><pattern id="dots-e" width="19" height="19" patternUnits="userSpaceOnUse">
+            <circle cx="9.5" cy="9.5" r="3.1" fill="#8FE8D3"/></pattern></defs>
+          <rect width="340" height="112" fill="#12907B"/>
+          <rect width="340" height="112" fill="url(#dots-e)" opacity=".72"/>
+          <path d="M0 84 C60 44 110 96 170 62 S280 24 340 56" fill="none" stroke="#04463C" stroke-width="3" opacity=".55"/>
+        </svg>
+      </div>
       <div class="eyebrow">Head of Operations</div>
       <h4 class="h3">E-Summit 23</h4>
       <p class="body">The second largest techno management festival at NIT Durgapur. Two thousand attendees and four sponsors closed.</p>
     </div>
 
     <div class="card c3 reveal">
+      <div class="art">
+        <svg viewBox="0 0 340 112" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="340" height="112" fill="#6B4AD4"/>
+          <g fill="none" stroke="#C9BAFA" stroke-width="2" opacity=".9">
+            <path d="M-10 40 C40 6 80 74 130 40 S220 6 270 40 S350 74 400 40"/>
+            <path d="M-10 68 C40 34 80 102 130 68 S220 34 270 68 S350 102 400 68" opacity=".6"/>
+          </g>
+          <circle cx="130" cy="40" r="5.5" fill="#FFFFFF"/>
+          <circle cx="270" cy="40" r="5.5" fill="#FFFFFF" opacity=".65"/>
+        </svg>
+      </div>
       <div class="eyebrow">Vice Chairperson</div>
       <h4 class="h3">ISTE NIT Durgapur</h4>
       <p class="body">Eleven events in a year and a fifteen person team that lifted channel engagement by a quarter.</p>
