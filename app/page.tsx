@@ -24,7 +24,7 @@ export default function Home() {
       <div className="bento">
         <Reveal className="card portrait col-span-4">
           <Image
-            src="/portrait.webp"
+            src="/portrait-desk.webp"
             alt={profile.name}
             fill
             sizes="(max-width: 980px) 100vw, 33vw"
