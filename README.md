@@ -2,39 +2,37 @@
 
 Personal site for Ritabrata Ganguly, performance and reliability engineer.
 
-Static HTML. No build step, no dependencies.
+Next.js 15 (App Router), React 19, TypeScript, Tailwind 3.
 
-## Files
-
-- `index.html` is the whole home page, styles and script inline.
-- `blog/index.html` is the /blog route.
-- `Main.dc.html` is the design source the page was generated from.
-- `portrait.webp` is used on the page, `portrait.jpg` is only for social previews.
-
-## Local
+## Run
 
 ```
-python -m http.server 8000
+npm install
+npm run dev
 ```
+
+## Structure
+
+- `lib/content.ts` is the single source for every piece of copy. Edit here, not in components.
+- `app/page.tsx` composes the bento grid.
+- `app/blog/page.tsx` is the /blog route.
+- `app/components/` holds Splash, ThemeToggle, Reveal, Metrics, Toolkit and the SVG art.
+- `app/globals.css` carries the design tokens and component classes.
+- `Main.dc.html` is the original design source, kept for reference.
+
+## Theming
+
+Light and dark are CSS custom properties in `globals.css`, switched by `next-themes` on a
+`data-theme` attribute. Add a colour by adding a token to both blocks, never a raw hex.
 
 ## Deploy
 
-```
-npx vercel deploy --prod
-```
+Pushes to `master` deploy automatically once the Vercel Git integration is connected.
+Manual deploy: `npx vercel deploy --prod`.
 
-## DNS
-
-rbganguly.in and www.rbganguly.in are attached to the Vercel project. At the registrar set:
-
-```
-A     rbganguly.in       76.76.21.21
-CNAME www                cname.vercel-dns.com
-```
-
-Or point the nameservers at ns1.vercel-dns.com and ns2.vercel-dns.com.
+Domain `rbganguly.in` is on Vercel nameservers.
 
 ## Open items
 
-- `resume.pdf` is referenced by the Connect card but does not exist yet.
-- Two `[RITABRATA: ...]` placeholders, one in the QA Engineer card and one on /blog.
+- `public/resume.pdf` does not exist yet, the Connect card links to it.
+- Two `[RITABRATA: ...]` placeholders, in `lib/content.ts` and `app/blog/page.tsx`.
