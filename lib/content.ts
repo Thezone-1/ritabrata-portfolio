@@ -1,6 +1,6 @@
 export const profile = {
   name: "Ritabrata Ganguly",
-  tagline: "I find where systems break before the people using them do.",
+  tagline: "Amor Fati",
   email: "ritabrataganguly7@gmail.com",
   linkedin: "https://www.linkedin.com/in/rbganguly",
   x: "https://x.com/rbganguly99",
