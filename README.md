@@ -34,5 +34,5 @@ Domain `rbganguly.in` is on Vercel nameservers.
 
 ## Open items
 
-- `public/resume.pdf` does not exist yet, the Connect card links to it.
+- Nothing outstanding on links; Connect points at LinkedIn, X and email.
 - Two `[RITABRATA: ...]` placeholders, in `lib/content.ts` and `app/blog/page.tsx`.

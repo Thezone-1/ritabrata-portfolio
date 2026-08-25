@@ -56,12 +56,12 @@ export default function Home() {
           <Reveal className="card dark justify-between" delay={0.14}>
             <div className="eyebrow">Connect</div>
             <div className="flex flex-col">
-              <a className="row" href="/resume.pdf">
-                <span className="lbl">Resume</span>
-                <ArrowRight size={17} strokeWidth={1.6} />
-              </a>
               <a className="row" href={profile.linkedin}>
                 <span className="lbl">LinkedIn</span>
+                <ArrowUpRight size={17} strokeWidth={1.6} />
+              </a>
+              <a className="row" href={profile.x}>
+                <span className="lbl">X</span>
                 <ArrowUpRight size={17} strokeWidth={1.6} />
               </a>
               <a className="row" href={`mailto:${profile.email}`}>
@@ -210,6 +210,13 @@ export default function Home() {
                 href={profile.linkedin}
               >
                 LinkedIn
+              </a>
+              <a
+                className="font-mono uppercase"
+                style={{ fontSize: 12, letterSpacing: ".12em", color: "var(--muted)" }}
+                href={profile.x}
+              >
+                X
               </a>
               <span
                 className="font-mono uppercase"

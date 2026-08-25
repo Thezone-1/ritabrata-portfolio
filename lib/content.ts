@@ -3,6 +3,7 @@ export const profile = {
   tagline: "I find where systems break before the people using them do.",
   email: "ritabrataganguly7@gmail.com",
   linkedin: "https://www.linkedin.com/in/rbganguly",
+  x: "https://x.com/rbganguly99",
   location: "Kolkata, India",
   description:
     "Performance and reliability engineer. AWS Certified Solutions Architect Associate. Kolkata, India.",
